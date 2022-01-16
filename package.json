@@ -81,7 +81,8 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
-  "dependencies": {
+  "optionalDependencies": {
+    "chokidar": "^3.5.2",
     "esbuild": "^0.14.11"
   }
 }
