@@ -88,5 +88,8 @@
   "optionalDependencies": {
     "chokidar": "^3.5.2",
     "esbuild": "^0.14.11"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.4.3"
   }
 }
