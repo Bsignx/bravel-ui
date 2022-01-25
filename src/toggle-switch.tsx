@@ -1,9 +1,9 @@
-import React from 'react';
-import { Switch } from '@headlessui/react';
+import React from 'react'
+import { Switch } from '@headlessui/react'
 
 export interface ToggleSwitchProps {
-  enabled?: boolean;
-  onChange?: (value: Boolean) => void;
+  enabled?: boolean
+  onChange?: (value: Boolean) => void
 }
 
 export const ToggleSwitch = ({
@@ -23,4 +23,4 @@ export const ToggleSwitch = ({
             pointer-events-none inline-block h-6 w-6 rounded-full bg-white shadow-lg transform ring-0 transition ease-in-out duration-200`}
     />
   </Switch>
-);
+)

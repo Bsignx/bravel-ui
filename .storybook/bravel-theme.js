@@ -1,8 +1,8 @@
-import { create } from '@storybook/theming';
+import { create } from '@storybook/theming'
 
-const colorPrimary = '#111827';
-const colorHighlight = '#F43F5E';
-const lightGray = '#F9FAFB';
+const colorPrimary = '#111827'
+const colorHighlight = '#F43F5E'
+const lightGray = '#F9FAFB'
 
 export default create({
   base: 'light',
@@ -18,4 +18,4 @@ export default create({
   textInverseColor: colorPrimary,
   textMutedColor: colorPrimary,
   appBg: lightGray,
-});
+})
