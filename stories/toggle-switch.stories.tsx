@@ -1,7 +1,8 @@
-import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import React from 'react'
 
-import { ToggleSwitch, ToggleSwitchProps } from '../src';
+import { Meta, Story } from '@storybook/react'
+
+import { ToggleSwitch, ToggleSwitchProps } from '../src/toggle-switch'
 
 const meta: Meta = {
   title: 'Input/Toggle Switch',
@@ -17,13 +18,13 @@ const meta: Meta = {
   parameters: {
     controls: { expanded: true },
   },
-};
+}
 
-export default meta;
+export default meta
 
-const Template: Story<ToggleSwitchProps> = (args) => <ToggleSwitch {...args} />;
+const Template: Story<ToggleSwitchProps> = (args) => <ToggleSwitch {...args} />
 
-export const Default = Template.bind({});
+export const Default = Template.bind({})
 Default.args = {
   enabled: false,
-};
+}
