@@ -105,5 +105,8 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.4.3"
+  },
+  "resolutions": {
+    "webpack": "^5"
   }
 }
