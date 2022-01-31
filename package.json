@@ -14,6 +14,7 @@
     "start": "tsdx watch",
     "build": "tsdx build && npm run build-tailwind",
     "test": "tsdx test --passWithNoTests",
+    "test-watch": "tsdx test --passWithNoTests --watchAll --bail",
     "lint": "eslint --fix src/**/*.{js,ts,tsx}",
     "prepare": "npm run build",
     "size": "size-limit",
