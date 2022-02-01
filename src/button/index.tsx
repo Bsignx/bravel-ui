@@ -3,9 +3,9 @@ import React, { ButtonHTMLAttributes, forwardRef, ReactNode } from 'react'
 import { cls } from 'utils/helpers/cls'
 
 const classes = {
-  base: 'focus:outline-none transition ease-in-out duration-300 max-w-min rounded font-medium',
+  base: 'focus:outline-none transition ease-in-out duration-300 rounded font-medium',
   disabled: 'opacity-50 cursor-not-allowed',
-  fullWidth: 'w-full max-w-none',
+  fullWidth: 'w-full',
   size: {
     medium: 'px-4 h-10',
   },
@@ -35,11 +35,11 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     {
       children,
       type = 'button',
-      className,
+      className = '',
       variant = 'primary',
       size = 'medium',
       theme = null,
-      icon,
+      icon = null,
       fullWidth = false,
       disabled = false,
       ...props
@@ -54,12 +54,11 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ${classes.base}
         ${classes.size[size]}
         ${classes.variant[variant]}
-        ${theme && classes.theme[theme]}
         ${disabled && classes.disabled}
+        ${!!theme && classes.theme[theme]}
+        ${!!icon && classes.withIcon}
         ${fullWidth && classes.fullWidth}
-        ${icon && classes.withIcon}
         ${className}
-
       `)}
       {...props}
     >

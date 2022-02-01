@@ -15,7 +15,7 @@ const meta: Meta = {
 export default meta
 
 const Template: Story<ButtonProps> = () => (
-  <div className="flex flex-col gap-2">
+  <div className="flex flex-col items-start gap-2">
     <Button variant="primary">primary</Button>
     <Button variant="secondary">secondary</Button>
     <Button
