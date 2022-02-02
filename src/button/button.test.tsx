@@ -38,7 +38,7 @@ describe('button', () => {
   it('renders fullWidth correctly', () => {
     render(<Button fullWidth>{buttonText}</Button>)
 
-    expect(screen.getByText(buttonText)).toHaveClass('w-full max-w-none')
+    expect(screen.getByText(buttonText)).toHaveClass('w-full')
   })
 
   it('renders with icon correctly', () => {
@@ -54,6 +54,14 @@ describe('button', () => {
 
     expect(screen.getByText(buttonText)).toHaveClass(
       'opacity-50 cursor-not-allowed'
+    )
+  })
+
+  it('renders plain correctly', () => {
+    render(<Button plain>{buttonText}</Button>)
+
+    expect(screen.getByText(buttonText)).toHaveClass(
+      'bg-transparent border-none hover:text-rose-500 hover:border-none'
     )
   })
 })

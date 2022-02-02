@@ -6,6 +6,7 @@ const classes = {
   base: 'focus:outline-none transition ease-in-out duration-300 rounded font-medium',
   disabled: 'opacity-50 cursor-not-allowed',
   fullWidth: 'w-full',
+  plain: 'bg-transparent border-none hover:text-rose-500 hover:border-none',
   size: {
     medium: 'px-4 h-10',
   },
@@ -28,6 +29,7 @@ export type ButtonProps = {
   theme?: 'secondaryDark' | null
   icon?: ReactNode
   fullWidth?: boolean
+  plain?: boolean
 } & ButtonHTMLAttributes<HTMLButtonElement>
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
@@ -42,6 +44,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       icon = null,
       fullWidth = false,
       disabled = false,
+      plain = false,
       ...props
     },
     ref
@@ -58,6 +61,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ${!!theme && classes.theme[theme]}
         ${!!icon && classes.withIcon}
         ${fullWidth && classes.fullWidth}
+        ${plain && classes.plain}
         ${className}
       `)}
       {...props}
