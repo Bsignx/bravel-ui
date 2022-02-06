@@ -43,4 +43,4 @@ const Template: Story<TextFieldProps> = () => (
   </div>
 )
 
-export const variants = Template.bind({})
+export const states = Template.bind({})
