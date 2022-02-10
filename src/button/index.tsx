@@ -4,29 +4,28 @@ import { cls } from 'utils/helpers/cls'
 
 const classes = {
   base: 'focus:outline-none transition ease-in-out duration-300 rounded font-medium',
-  disabled: 'opacity-50 cursor-not-allowed',
-  fullWidth: 'w-full',
-  plain: 'bg-transparent border-none hover:text-rose-500 hover:border-none',
-  size: {
-    medium: 'px-4 h-10',
-  },
-  theme: {
-    secondaryDark: 'text-gray-50 border-gray-500',
-  },
-  withIcon: 'flex items-center justify-center gap-2',
   variant: {
     primary:
       'bg-gray-900 hover:bg-rose-500 focus:ring-2 focus:ring-gray-900 focus:ring-opacity-50 text-gray-50',
     secondary:
-      'bg-transparent border-solid border-zinc-300 border hover:border-rose-500 focus:ring-2 focus:ring-gray-500 text-gray-700',
+      'bg-transparent border-solid border-zinc-300 border hover:border-rose-500 hover:text-rose-500 focus:ring-2 focus:ring-gray-500 text-gray-900',
+    tertiary:
+      'bg-transparent border-solid border-gray-500 border hover:border-rose-500 hover:text-rose-500 focus:ring-2 focus:ring-gray-500 text-gray-50',
   },
+  disabled: 'opacity-50 cursor-not-allowed',
+  fullWidth: 'w-full',
+  plain:
+    'bg-transparent border-none hover:text-rose-500 hover:bg-transparent hover:border-none',
+  size: {
+    medium: 'px-4 h-10',
+  },
+  withIcon: 'flex items-center justify-center gap-2',
 }
 
 export type ButtonProps = {
   children: React.ReactNode
-  variant?: 'primary' | 'secondary'
+  variant?: 'primary' | 'secondary' | 'tertiary'
   size?: 'medium'
-  theme?: 'secondaryDark' | null
   icon?: ReactNode
   fullWidth?: boolean
   plain?: boolean
@@ -40,7 +39,6 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       className = '',
       variant = 'primary',
       size = 'medium',
-      theme = null,
       icon = null,
       fullWidth = false,
       disabled = false,
@@ -58,7 +56,6 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ${classes.size[size]}
         ${classes.variant[variant]}
         ${disabled && classes.disabled}
-        ${!!theme && classes.theme[theme]}
         ${!!icon && classes.withIcon}
         ${fullWidth && classes.fullWidth}
         ${plain && classes.plain}
