@@ -21,18 +21,16 @@ describe('button', () => {
     rerender(<Button variant="secondary">{buttonText}</Button>)
 
     expect(screen.getByText(buttonText)).toHaveClass('bg-transparent')
+
+    rerender(<Button variant="tertiary">{buttonText}</Button>)
+
+    expect(screen.getByText(buttonText)).toHaveClass('bg-transparent')
   })
 
   it('renders sizes correctly', () => {
     render(<Button size="medium">{buttonText}</Button>)
 
     expect(screen.getByText(buttonText)).toHaveClass('px-4 h-10')
-  })
-
-  it('renders themes correctly', () => {
-    render(<Button theme="secondaryDark">{buttonText}</Button>)
-
-    expect(screen.getByText(buttonText)).toHaveClass('text-gray-50')
   })
 
   it('renders fullWidth correctly', () => {
