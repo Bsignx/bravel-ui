@@ -1,6 +1,6 @@
 import React, { PropsWithChildren, HtmlHTMLAttributes } from 'react'
 
-import { cls } from 'utils/helpers/cls'
+import { cls } from 'utils/helpers'
 
 const classes = {
   color: {
