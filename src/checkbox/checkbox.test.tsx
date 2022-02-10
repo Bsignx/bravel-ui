@@ -1,9 +1,9 @@
 import React from 'react'
 
 import userEvent from '@testing-library/user-event'
-import { render, screen, waitFor } from 'utils/test/custom-render'
 
 import { Checkbox } from '.'
+import { render, screen, waitFor } from '../utils/test/custom-render'
 
 describe('Checkbox', () => {
   it('should render with label', () => {

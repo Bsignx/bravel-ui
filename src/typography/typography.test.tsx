@@ -1,8 +1,7 @@
 import React from 'react'
 
-import { render, screen } from 'utils/test/custom-render'
-
 import { Typography } from '.'
+import { render, screen } from '../utils/test/custom-render'
 
 describe('typography', () => {
   it('renders without crashing', () => {
