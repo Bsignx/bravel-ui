@@ -18,9 +18,14 @@ const Template: Story<ButtonProps> = () => (
   <div className="flex flex-col items-start gap-2">
     <Button variant="primary">primary</Button>
     <Button variant="secondary">secondary</Button>
-    <Button variant="secondary" plain>
-      primary plain
+    <Button variant="tertiary">tertiary</Button>
+    <Button variant="primary" plain>
+      plain primary
     </Button>
+    <Button variant="secondary" plain>
+      plain secondary
+    </Button>
+
     <Button
       variant="secondary"
       fullWidth
