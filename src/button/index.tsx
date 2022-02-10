@@ -1,6 +1,6 @@
 import React, { ButtonHTMLAttributes, forwardRef, ReactNode } from 'react'
 
-import { cls } from 'utils/helpers'
+import { cls } from '../utils/helpers'
 
 const classes = {
   base: 'focus:outline-none transition ease-in-out duration-300 rounded font-medium',

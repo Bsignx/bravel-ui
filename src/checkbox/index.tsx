@@ -1,6 +1,6 @@
 import React, { InputHTMLAttributes, useState } from 'react'
 
-import { cls } from 'utils/helpers'
+import { cls } from '../utils/helpers'
 
 const checkedIconUrl =
   'https://res.cloudinary.com/my-portfoiio/image/upload/v1644181223/samples/bravel/download_pobybk_4_1_fiipgk.svg'

@@ -1,6 +1,6 @@
 import React, { InputHTMLAttributes, useState } from 'react'
 
-import { cls } from 'utils/helpers'
+import { cls } from '../utils/helpers'
 
 const inputClasses = {
   base: 'focus:shadow-outline w-full appearance-none rounded border border-gray-50 py-2 px-3 leading-tight text-gray-700 shadow focus:outline-none',

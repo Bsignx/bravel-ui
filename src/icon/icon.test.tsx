@@ -1,8 +1,7 @@
 import React from 'react'
 
-import { render, screen } from 'utils/test/custom-render'
-
 import { Icon } from '.'
+import { render, screen } from '../utils/test/custom-render'
 
 describe('icon', () => {
   it('renders without crashing', () => {

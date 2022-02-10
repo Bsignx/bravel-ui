@@ -1,8 +1,7 @@
 import React from 'react'
 
-import { render, screen } from 'utils/test/custom-render'
-
 import { Button } from '.'
+import { render, screen } from '../utils/test/custom-render'
 
 const buttonText = 'Test Button'
 
