@@ -23,7 +23,7 @@ const classes = {
 }
 
 export type ButtonProps = {
-  children: React.ReactNode
+  children?: ReactNode
   variant?: 'primary' | 'secondary' | 'tertiary'
   size?: 'medium'
   icon?: ReactNode

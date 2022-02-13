@@ -14,6 +14,7 @@ export type TextFieldProps = {
   initialValue?: string
   disabled?: boolean
   error?: string
+  inputClassName?: string
 } & InputHTMLAttributes<HTMLInputElement>
 
 export const TextField = ({
@@ -23,6 +24,7 @@ export const TextField = ({
   initialValue = '',
   disabled = false,
   error,
+  inputClassName,
   ...props
 }: TextFieldProps) => {
   const [value, setValue] = useState(initialValue)
@@ -48,6 +50,7 @@ export const TextField = ({
             ${inputClasses.base}
             ${disabled && inputClasses.disabled}
             ${error && inputClasses.error}
+            ${inputClassName}
           `)}
         name={name}
         type="text"
