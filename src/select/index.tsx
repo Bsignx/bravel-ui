@@ -16,7 +16,8 @@ export type SelectProps = {
   options: Option[]
   label?: string
   name?: string
-  onValueChange: (value: string) => void
+  error?: string
+  onValueChange?: (value: string) => void
   wrapperClassName?: string
 } & InputHTMLAttributes<HTMLSelectElement>
 
@@ -28,6 +29,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
       label = '',
       name = '',
       wrapperClassName,
+      error
       ...props
     },
     ref
@@ -40,7 +42,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
       setSelected(
         options.find((option) => option.value === value) || options[0]
       )
-      onValueChange(value)
+      onValueChange && onValueChange(value)
     }
 
     return (
@@ -51,10 +53,11 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
           </label>
         )}
         <select
+          {...(onValueChange
+            ? { onChange: handleChange, value: selected.value }
+            : {})}
           name={name}
           id={name}
-          onChange={handleChange}
-          value={selected.value}
           {...props}
           className={cls(
             `focus:ring-primary-500 focus:border-primary-500 block w-40 rounded border border-gray-50 bg-white py-2 px-3 text-gray-700 shadow focus:outline-none  md:w-52 ${props.className}`
@@ -67,6 +70,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
             </option>
           ))}
         </select>
+        {!!error && <p className="mt-1 text-xs text-red-500">{error}</p>}
       </div>
     )
   }
