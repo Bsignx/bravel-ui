@@ -27,11 +27,9 @@ type SportsName =
   | 'mma'
   | 'bike'
 
-export type IconProps =
-  | {
-      name: SportsName
-    }
-  | SVGProps<SVGSVGElement>
+export type IconProps = {
+  name: SportsName
+} & SVGProps<SVGSVGElement> // update
 
 export const Icon = ({ name, ...rest }: IconProps) => {
   switch (name) {

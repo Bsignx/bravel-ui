@@ -15,6 +15,7 @@ export type TextFieldProps = {
   disabled?: boolean
   error?: string
   inputClassName?: string
+  wrapperClassName?: string
 } & InputHTMLAttributes<HTMLInputElement>
 
 export const TextField = ({
@@ -25,6 +26,7 @@ export const TextField = ({
   disabled = false,
   error,
   inputClassName,
+  wrapperClassName,
   ...props
 }: TextFieldProps) => {
   const [value, setValue] = useState(initialValue)
@@ -37,7 +39,12 @@ export const TextField = ({
   }
 
   return (
-    <div className="w-full">
+    <div
+      className={cls(`
+        w-full
+        ${wrapperClassName}
+    `)}
+    >
       {!!label && (
         <label className="mb-2 block text-base text-gray-900" htmlFor={name}>
           {label}
