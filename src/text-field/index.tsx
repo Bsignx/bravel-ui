@@ -80,8 +80,8 @@ export const TextField = forwardRef<
           type="text"
           disabled={disabled}
           {...(label ? { id: name } : {})}
-          ref={ref}
           {...props}
+          ref={ref}
         />
         {!!error && <p className="mt-1 text-xs text-red-500">{error}</p>}
       </div>
