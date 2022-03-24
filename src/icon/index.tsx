@@ -28,7 +28,7 @@ type SportsName =
   | 'bike'
 
 export type IconProps = {
-  name: SportsName
+  name?: SportsName
 } & SVGProps<SVGSVGElement> // update
 
 export const Icon = ({ name, ...rest }: IconProps) => {

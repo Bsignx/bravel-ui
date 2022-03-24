@@ -11,7 +11,7 @@ describe('icon', () => {
   })
 
   it('return nothing when name prop not passed', () => {
-    render(<Icon name="basketball" />)
+    render(<Icon />)
 
     expect(screen.queryByTestId('basketball-icon')).not.toBeInTheDocument()
   })
