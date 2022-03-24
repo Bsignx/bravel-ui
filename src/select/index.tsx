@@ -46,7 +46,7 @@ export const Select = ({
         value={selected.value}
         {...props}
         className={cls(
-          `focus:ring-primary-500 focus:border-primary-500 block w-40 rounded-md border border-gray-50 bg-white py-2 px-3 text-gray-700 shadow focus:outline-none  md:w-52 ${props.className}`
+          `focus:ring-primary-500 focus:border-primary-500 block w-40 rounded border border-gray-50 bg-white py-2 px-3 text-gray-700 shadow focus:outline-none  md:w-52 ${props.className}`
         )}
       >
         {options?.map(({ value, label }) => (
