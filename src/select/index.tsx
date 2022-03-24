@@ -12,6 +12,7 @@ export type SelectProps = {
   label?: string
   name?: string
   onValueChange: (value: string) => void
+  wrapperClassName?: string
 } & InputHTMLAttributes<HTMLSelectElement>
 
 export const Select = ({
@@ -19,6 +20,7 @@ export const Select = ({
   onValueChange,
   label = '',
   name = '',
+  wrapperClassName,
   ...props
 }: SelectProps) => {
   const [selected, setSelected] = useState<Option>(options[0])
@@ -31,7 +33,7 @@ export const Select = ({
   }
 
   return (
-    <div>
+    <div className={cls(`${wrapperClassName}`)}>
       {label && (
         <label htmlFor={name} className="mb-2 block text-base text-gray-900">
           {label}

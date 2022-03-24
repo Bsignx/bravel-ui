@@ -19,7 +19,7 @@ export type TextFieldProps<E extends ElementType> = {
   isTextarea?: boolean
 } & ComponentPropsWithoutRef<E>
 
-export const TextField = <E extends ElementType = 'input'>({
+export const TextField = <E extends ElementType = 'input' | 'textarea'>({
   onInputChange,
   label,
   name,
