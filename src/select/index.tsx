@@ -29,7 +29,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
       label = '',
       name = '',
       wrapperClassName,
-      error
+      error,
       ...props
     },
     ref
