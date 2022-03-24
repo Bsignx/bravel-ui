@@ -1,4 +1,4 @@
-import React, { InputHTMLAttributes, useState } from 'react'
+import React, { ComponentPropsWithoutRef, ElementType, useState } from 'react'
 
 import { cls } from '../utils/helpers'
 
@@ -8,7 +8,7 @@ const inputClasses = {
   error: 'border-red-500',
 }
 
-export type TextFieldProps = {
+export type TextFieldProps<E extends ElementType> = {
   onInputChange?: (value: string) => void
   label?: string
   initialValue?: string
@@ -16,9 +16,10 @@ export type TextFieldProps = {
   error?: string
   inputClassName?: string
   wrapperClassName?: string
-} & InputHTMLAttributes<HTMLInputElement>
+  isTextarea?: boolean
+} & ComponentPropsWithoutRef<E>
 
-export const TextField = ({
+export const TextField = <E extends ElementType = 'input'>({
   onInputChange,
   label,
   name,
@@ -27,12 +28,17 @@ export const TextField = ({
   error,
   inputClassName,
   wrapperClassName,
+  isTextarea = false,
   ...props
-}: TextFieldProps) => {
+}: TextFieldProps<E>) => {
+  const InputElement = isTextarea ? 'textarea' : 'input'
+
   const [value, setValue] = useState(initialValue)
 
-  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newValue = e.currentTarget.value
+  const handleOnChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const newValue = event.currentTarget.value
     setValue(newValue)
 
     !!onInputChange && onInputChange(newValue)
@@ -50,7 +56,8 @@ export const TextField = ({
           {label}
         </label>
       )}
-      <input
+
+      <InputElement
         onChange={handleOnChange}
         value={value}
         className={cls(`

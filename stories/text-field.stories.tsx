@@ -40,6 +40,9 @@ const Template: Story<TextFieldProps> = () => (
       name="text input"
       error="with error"
     />
+    <div className="w-72">
+      <TextField label="textarea field" name="textarea field" isTextarea />
+    </div>
   </div>
 )
 
